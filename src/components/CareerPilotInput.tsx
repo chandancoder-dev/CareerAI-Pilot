@@ -40,7 +40,7 @@ const CareerPilotInput = ({ onGenerate, isLoading }: CareerPilotInputProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="card-glass rounded-2xl p-8 max-w-2xl mx-auto"
+      className="card-glass rounded-2xl p-8 max-w-2xl mx-auto shadow-xl shadow-primary/5 border border-border/50"
     >
       <div className="space-y-6">
         <div className="space-y-2">
