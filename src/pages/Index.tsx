@@ -11,6 +11,7 @@ import { generateCareerPlan } from "@/lib/generateCareerPlan";
 
 interface CareerResults {
   roles: string[];
+  rolesFit: string;
   guidance: string;
   email: string;
 }

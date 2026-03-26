@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Briefcase, Compass, Mail, Copy, Check } from "lucide-react";
+import { Briefcase, Compass, Mail, Copy, Check, Lightbulb } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 interface CareerResults {
   roles: string[];
+  rolesFit: string;
   guidance: string;
   email: string;
 }
@@ -72,7 +73,13 @@ const CareerPilotResults = ({ results }: CareerPilotResultsProps) => {
         </div>
       </SectionCard>
 
-      <SectionCard icon={Compass} title="Career Guidance" delay={0.25}>
+      <SectionCard icon={Lightbulb} title="Why These Roles Fit You" delay={0.18}>
+        <p className="text-muted-foreground font-body leading-relaxed">
+          {results.rolesFit}
+        </p>
+      </SectionCard>
+
+      <SectionCard icon={Compass} title="Career Guidance" delay={0.28}>
         <p className="text-muted-foreground font-body leading-relaxed whitespace-pre-line">
           {results.guidance}
         </p>
