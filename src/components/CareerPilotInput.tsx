@@ -51,7 +51,7 @@ const CareerPilotInput = ({ onGenerate, isLoading }: CareerPilotInputProps) => {
             placeholder="e.g. React, Python, Machine Learning, SQL..."
             value={skills}
             onChange={(e) => setSkills(e.target.value)}
-            className="h-12 rounded-xl bg-secondary/50 border-border/60 font-body text-foreground placeholder:text-muted-foreground focus-visible:ring-primary/40"
+            className="h-12 rounded-xl bg-secondary/50 border-border/60 font-body text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary/30 transition-shadow focus-visible:shadow-[0_0_15px_-3px_hsl(var(--primary)/0.3)]"
           />
         </div>
 
