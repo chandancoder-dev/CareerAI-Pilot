@@ -76,7 +76,7 @@ const CareerPilotInput = ({ onGenerate, isLoading }: CareerPilotInputProps) => {
         <Button
           onClick={handleSubmit}
           disabled={!skills.trim() || !interest || isLoading}
-          className="w-full h-12 rounded-xl bg-gradient-brand text-primary-foreground font-display font-semibold text-base hover:opacity-90 transition-opacity disabled:opacity-50"
+          className="w-full h-12 rounded-xl bg-gradient-brand text-primary-foreground font-display font-semibold text-base transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
         >
           {isLoading ? (
             <span className="flex items-center gap-2">
