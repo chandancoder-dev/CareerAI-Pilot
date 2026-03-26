@@ -40,7 +40,7 @@ const CareerPilotInput = ({ onGenerate, isLoading }: CareerPilotInputProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="card-glass rounded-2xl p-8 max-w-2xl mx-auto"
+      className="card-glass rounded-2xl p-8 max-w-2xl mx-auto shadow-xl shadow-primary/5 border border-border/50"
     >
       <div className="space-y-6">
         <div className="space-y-2">
@@ -51,7 +51,7 @@ const CareerPilotInput = ({ onGenerate, isLoading }: CareerPilotInputProps) => {
             placeholder="e.g. React, Python, Machine Learning, SQL..."
             value={skills}
             onChange={(e) => setSkills(e.target.value)}
-            className="h-12 rounded-xl bg-secondary/50 border-border/60 font-body text-foreground placeholder:text-muted-foreground focus-visible:ring-primary/40"
+            className="h-12 rounded-xl bg-secondary/50 border-border/60 font-body text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary/30 transition-shadow focus-visible:shadow-[0_0_15px_-3px_hsl(var(--primary)/0.3)]"
           />
         </div>
 
@@ -76,7 +76,7 @@ const CareerPilotInput = ({ onGenerate, isLoading }: CareerPilotInputProps) => {
         <Button
           onClick={handleSubmit}
           disabled={!skills.trim() || !interest || isLoading}
-          className="w-full h-12 rounded-xl bg-gradient-brand text-primary-foreground font-display font-semibold text-base hover:opacity-90 transition-opacity disabled:opacity-50"
+          className="w-full h-12 rounded-xl bg-gradient-brand text-primary-foreground font-display font-semibold text-base transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
         >
           {isLoading ? (
             <span className="flex items-center gap-2">

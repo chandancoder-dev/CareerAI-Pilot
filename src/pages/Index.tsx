@@ -39,7 +39,7 @@ const Index = () => {
       <HeroSection />
 
       {/* Career Input Section */}
-      <section id="career-input" className="py-16 px-4">
+      <section id="career-input" className="py-20 px-4">
         <div className="container max-w-4xl">
           <CareerPilotInput onGenerate={handleGenerate} isLoading={isLoading} />
           {results && <CareerPilotResults results={results} />}
