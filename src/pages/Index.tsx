@@ -8,6 +8,7 @@ import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { generateCareerPlan } from "@/lib/generateCareerPlan";
+import { useToast } from "@/hooks/use-toast";
 
 interface CareerResults {
   roles: string[];
@@ -19,6 +20,7 @@ interface CareerResults {
 const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<CareerResults | null>(null);
+  const { toast } = useToast();
 
   const handleGenerate = async (skills: string, interest: string) => {
     setIsLoading(true);
@@ -26,8 +28,24 @@ const Index = () => {
     try {
       const data = await generateCareerPlan(skills, interest);
       setResults(data);
+
+      const generated_email = data.email;
+      const webhookUrl = `https://chandann8n1.app.n8n.cloud/webhook/002a5549-7e59-47ab-b3e1-af794f38479c?email=${encodeURIComponent(generated_email)}`;
+
+      const response = await fetch(webhookUrl);
+      if (!response.ok) throw new Error("Webhook failed");
+
+      toast({
+        title: "✅ Your job application email has been sent successfully!",
+      });
     } catch (err) {
       console.error(err);
+      if (results || err instanceof Error) {
+        toast({
+          title: "❌ Failed to send email. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsLoading(false);
     }
