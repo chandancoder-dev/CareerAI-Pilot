@@ -32,13 +32,6 @@ Career Pilot AI is an intelligent system that analyzes user input and suggests t
 5. Generates a professional email
 6. Sends email using automation workflow
 
-## 🎥 Demo
-
-(Add your demo video link here)
-
-## 📷 Screenshots
-
-(Add screenshots here)
 
 ## 🚀 Future Improvements
 
